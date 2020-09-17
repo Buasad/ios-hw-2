@@ -30,10 +30,30 @@ import UIKit
  #
  اكثر من 40 -> سمنة مفرطه
 */
+var height = Double ()
+var weight = Double ()
+var BMI = Double (weight / (height * height))
+import Foundation
+func Bmicalc(weight :Double, height1:Double, height2:Double ) -> String
+{
+if weight / (height1 * height2) <=  18.5 {
+    return "weak" }
 
-
-
-
+    else if weight / (height1 * height2)  >= 18.5 {
+    return("natural weight")
+}
+        
+else if weight / (height1 * height2) >= 30.1 {
+        return("lightweight")
+}
+else if weight / (height1 * height2) >= 40 {
+    return("Obese")
+}
+else {
+return("nil")
+}
+}
+Bmicalc(weight: 100, height1:  1.7, height2: 1.7)
 
 //: # 2️⃣  السؤال الثاني
 
@@ -51,4 +71,18 @@ import UIKit
   #
  و اذا كان فوق ١٨ سوف يتم طباعة نص بأن المتقدم يُسمح له بإمتلاك رخصة قيادة
 */
-
+var applicantName = "Mohammed"
+var applicantAge = 18
+import Foundation
+func applyForLicense(age:Int) -> String
+{ if age < 18 {
+    return("Applicant Has Not Fulfilled Age Requirement")
+    }
+else {
+    return("Applicant  Will  Be  Allowed  To  Have A Driving License")
+    
+    }
+}
+applyForLicense(age: 18)
+print(applyForLicense(age: 17))
+print(applyForLicense(age: 18))
