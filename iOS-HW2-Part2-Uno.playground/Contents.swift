@@ -34,7 +34,6 @@ import UIKit
  ###### مثال على تسمية الكروت موضحة كالتالي، قم بتشغيل الكود لرؤية الصور أسفل هذه الأكواد:
  */
 
-
 var blue_5 = UIImage(named: "Blue_6.png")
 var red_9 = UIImage(named: "Red_9.png")
 
@@ -86,20 +85,29 @@ var wild_Draw = UIImage(named: "Wild_Draw.png")
 
 
 /// قم بإنشاء الستركت هنا
-
-// struct ...
-
-
-
-
-
+struct Card{
+var CardNumber: Int
+var CardColor: String
+    func imageName()-> String {
+        return "\(CardColor)_\(CardNumber).png"
+    }
+}
+var cards : [Card] = []
+var colors = ["Red","Green","Blue","Yellow"]
+for color in colors
+{ for i in 0...9{
+    cards.append(Card(CardNumber: i, CardColor: color))}
+    for o in 1...9{
+        cards.append(Card(CardNumber: o, CardColor: color))
+}
+}
 // لا تقم بإزالة الملاحظات إلا عند وصولك للمطلوب الثالث
 
-//
-//let randomCard = cards.randomElement()!
-//let randomCardImage = UIImage(named: randomCard.imageName())
-//
-//
-//let cardImages = cards.map{UIImage(named: $0.imageName())}
-//randomCardImage
-//cardImages
+
+let randomCard = cards.randomElement()!
+let randomCardImage = UIImage(named: randomCard.imageName())
+
+
+let cardImages = cards.map{UIImage(named: $0.imageName())}
+randomCardImage
+cardImages
