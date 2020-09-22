@@ -83,13 +83,14 @@ var wild_Draw = UIImage(named: "Wild_Draw.png")
 //: # الحل ...
 
 
-
 /// قم بإنشاء الستركت هنا
 struct Card{
 var CardNumber: Int
 var CardColor: String
+    
     func imageName()-> String {
         return "\(CardColor)_\(CardNumber).png"
+
     }
 }
 var cards : [Card] = []
@@ -97,7 +98,7 @@ var colors = ["Red","Green","Blue","Yellow"]
 for color in colors
 { for i in 0...9{
     cards.append(Card(CardNumber: i, CardColor: color))}
-    for o in 1...9{
+    for o in 1...12{
         cards.append(Card(CardNumber: o, CardColor: color))
 }
 }
